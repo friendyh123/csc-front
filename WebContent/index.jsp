@@ -11,7 +11,6 @@
 </head>
 <body>
 	<div id="chat-room">
-
 		<div class="righter">
 			<div id="history">			
 			</div>

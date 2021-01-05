@@ -6,7 +6,7 @@ if ('WebSocket' in window) {
 else {
     alert('当前浏览器 不支持websocket');
 }
-
+//点击发送触发
 function myFunction() {	
 		  var message = document.getElementById('sendmessage').value;
 		  document.getElementById('sendmessage').value="";
@@ -21,7 +21,7 @@ function myFunction() {
 
  
 
-
+//获取当前时间
 function current() {
 	var d = new Date(), str = '(';
 	str += d.getFullYear() + '-'; //获取当前年份 
@@ -71,16 +71,4 @@ function setMessageInnerHTML(innerHTML) {
 //关闭WebSocket连接
 function closeWebSocket() {
 	websocket.close();
-};
-document.getElementById("sendbtn").onclick = function() {
-	var message = document.getElementById('sendmessage').value;
-	document.getElementById('sendmessage').value = "";
-	if (message.trim().match("offline")) {//断开连接
-		closeWebSocket();
-		document.getElementById('history').innerHTML += "<p style='float:left'>访客断开连接</p><br/><br/>";
-		return;
-	}
-	websocket.send(message);
-	document.getElementById('history').innerHTML += "<p style='float:left'>访客:  "
-			+ current() + "<br/>" + message + "</p><br/><br/><br/><br/>";
 };
