@@ -31,17 +31,19 @@
 		        websocket = new WebSocket("ws://localhost:8887");
 		    }
 		    else {
-		        alert('当前浏览器 Not support websocket')
+		        alert('当前浏览器 不支持websocket');
 		    }
 
 		    //连接发生错误的回调方法
 		    websocket.onerror = function () {
 		        setMessageInnerHTML("WebSocket连接发生错误");
+		        //alert("WebSocket连接发生错误");
 		    };
 
 		    //连接成功建立的回调方法
 		    websocket.onopen = function () {
-		        setMessageInnerHTML("连接成功，可以开始聊天了");
+		        setMessageInnerHTML("连接成功");
+		        //alert("连接成功");
 		    }
 
 		    //接收到消息的回调方法
