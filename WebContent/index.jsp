@@ -7,6 +7,7 @@
 <title>智能客服</title>
 <link type="text/css" rel="stylesheet" href="css/style.css" />
 <script src="scripts/jquery-3.3.1.min.js" type="text/javascript"></script>
+<script src="scripts/jquery.i18n.properties.js" type="text/javascript"></script>
 <script src="scripts/cscfront.js" type="text/javascript"></script>
 </head>
 <body>
@@ -18,7 +19,7 @@
 			<div class="reply">
 			   <input id="username" hidden="hidden"  type="text"/>
 				   <input type="text" class="text" id="sendmessage" name="content" /><label
-					class="ui-blue"><input type="button" id="sendbtn" value="发送" onclick="myFunction()"/></label>
+					class="ui-blue"><input type="button" id="sendbtn" value="发送" onclick="sendMsg()"/></label>
 			</div>
 		</div>
 	</div>

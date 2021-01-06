@@ -1,13 +1,16 @@
+loadProperties();
+var ip = $.i18n.prop('ip');//读取配置文件的ip
+//alert(ip);
 var websocket = null;		    
 //判断当前浏览器是否支持WebSocket
 if ('WebSocket' in window) {
-    websocket = new WebSocket("ws://localhost:8887");
+    websocket = new WebSocket(ip);
 }
 else {
     alert('当前浏览器 不支持websocket');
 }
 //点击发送触发
-function myFunction() {	
+function sendMsg() {	
 		  var message = document.getElementById('sendmessage').value;
 		  document.getElementById('sendmessage').value="";
 		  if(message.trim().match("offline")){//断开连接
@@ -72,3 +75,14 @@ function setMessageInnerHTML(innerHTML) {
 function closeWebSocket() {
 	websocket.close();
 };
+
+function loadProperties(){
+	jQuery.i18n.properties({
+		name:'ip', // properties文件名称  
+	    path:'properties/', // properties文件路径  
+	    mode:'map', // 用 Map 的方式使用资源文件中的值  
+		callback: function() {
+			
+		}
+	});
+}
